@@ -1,4 +1,4 @@
-// run in shell
+// Run in shell
 // NODE_ENV=production /node_modules/.bin/webpack -p --config webpack.config.js
 
 module.exports = {
@@ -31,10 +31,16 @@ module.exports = {
         test: /\.css$/,
         use: [
           'style-loader',
-          { loader: 'css-loader', options: { modules: true, importLoaders: 1 } },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1
+            }
+          },
           'postcss-loader'
         ]
       }
     ]
   }
-};
+}
