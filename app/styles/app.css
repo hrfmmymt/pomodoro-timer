@@ -3,11 +3,22 @@
 html,
 body,
 div,
-h1 {
+main,
+section,
+header,
+footer,
+h1,
+h2,
+h3,
+ul,
+li,
+a,
+p,
+input {
   margin: 0;
   padding: 0;
 }
 
-div {
-  display: flex;
+ul {
+  list-style-type: none;
 }

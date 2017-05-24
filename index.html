@@ -9,7 +9,27 @@
     <h1>wei</h1>
   </header>
 
-  <main id="app"></main>
+  <div class="wrapper">
+    <main id="app">
+      <section class="controls">
+        <ul class="buttons">
+          <li><button>Start</button></li>
+          <li><button>Pause</button></li>
+          <li><button>Clear</button></li>
+        </ul>
+        <div class="length-setter">
+          <div class="input-wrapper">
+            <input type="range" min="15" max="60" step="5" value="25">
+          </div>
+          <h3>Pomodoro Length: <span>25</span> minutes</h3>
+        </div>
+      </section>
+      <section class="clock">
+        <h2>25:00</h2>
+      </section>
+      <!-- <h1><span id="mins">25</span>:<span id="secs">00</span></h1> -->
+    </main>
+  </div>
 
   <footer>
     <p>by <a href="//hrfmmymt.github.io">hrfmmymt</a></p>
