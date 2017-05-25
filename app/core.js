@@ -1,22 +1,25 @@
 /**
 state = {
   length:             (25min / 60000) [time in miliseconds]
-  is_active:          false [bool]
   activity_type:      'p'   [string] p/b
-  timer:              (25min / 60000) [time in miliseconds] || -1
+  timer:              object
+    is_active:        false [bool]
+    was_started:      false [bool]
+    is_finished:      false [bool]
+    time:             (25min / 60000) [time in miliseconds] || -1
 }
  */
-
-import { createStore, combineReducers } from 'redux'
-import * as reducers from './reducers'
 import React from 'react'
+import {createStore, combineReducers} from 'redux'
 import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
-import App from './components/App'
+import {Provider} from 'react-redux'
+import * as reducers from './reducers'
+import App from './components/containers/App'
 
 const store = createStore(
   combineReducers({
-    length: reducers.length,
+    breakLength: reducers.breakLength,
+    pomodoroLength: reducers.pomodoroLength,
     is_active: reducers.is_active,
     activity_type: reducers.activity_type,
     timer: reducers.timer
@@ -35,4 +38,5 @@ const run = () => {
 run()
 store.subscribe(run)
 
+// *** DEBUG *** //
 window.store = store
