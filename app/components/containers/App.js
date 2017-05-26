@@ -18,7 +18,7 @@ import Styles from '../../styles/app.css'
 const mapStateToProps = state => ({
   pomodoroLength: state.pomodoroLength,
   breakLength: state.breakLength,
-  activity_type: state.activity_type,
+  activityType: state.activityType,
   timer: state.timer
 })
 
@@ -59,13 +59,13 @@ class App extends React.Component {
     const t = this
     const p = this.props
     const timer = this.props.timer
-    const length = (p.activity_type === 'p') ? p.breakLength : p.pomodoroLength
+    const length = (p.activityType === 'p') ? p.breakLength : p.pomodoroLength
 
     const startTimeout = () => {
       t.timeout = setTimeout(() => {
         t.counter -= t.ONE_SEC
         if (t.counter === 0) {
-          const type = (p.activity_type === 'p') ? 'b' : 'p'
+          const type = (p.activityType === 'p') ? 'b' : 'p'
           p.finishTimer()
           p.setActivityType(type)
           t.tickSound.pause()
@@ -86,7 +86,7 @@ class App extends React.Component {
     }
 
     if (timer.is_active) {
-      const length = (p.activity_type === 'p') ? p.pomodoroLength : p.breakLength
+      const length = (p.activityType === 'p') ? p.pomodoroLength : p.breakLength
       this.counter = (timer.time === 0) ? length : timer.time
       if (this.counter !== 0) {
         startTimeout()
@@ -96,14 +96,14 @@ class App extends React.Component {
 
   render() {
     const p = this.props
-    const humanTime = (p.activity_type === 'b') ? p.breakLength : p.pomodoroLength
+    const humanTime = (p.activityType === 'b') ? p.breakLength : p.pomodoroLength
     return (
       <div>
         <Controls
           timer={p.timer}
           pomodoroLength={p.pomodoroLength}
           breakLength={p.breakLength}
-          activityType={p.activity_type}
+          activityType={p.activityType}
           stopTimeout={this.stopTimeout}
           acts={{
             setActivityType: p.setActivityType,
@@ -118,7 +118,7 @@ class App extends React.Component {
             alarm: this.alarmSound
           }}
           />
-        <Clock timer={p.timer} type={p.activity_type} act={p.setActivityType}>
+        <Clock timer={p.timer} type={p.activityType} act={p.setActivityType}>
           {humanTime}
         </Clock>
       </div>
