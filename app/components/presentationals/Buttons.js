@@ -40,7 +40,6 @@ class Buttons extends React.Component {
 
   render() {
     const p = this.props
-    // console.log(p);
     const callback = p.disabled ? this._pauseTimer : this._startTimer
     const text = p.disabled ? 'Pause' : 'Start'
 

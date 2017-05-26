@@ -1,5 +1,5 @@
 import React from 'react'
-import Setter from './Setter'
+import Setter from './setter'
 
 class LengthSetters extends React.Component {
   render() {

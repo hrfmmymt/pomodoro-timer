@@ -1,6 +1,6 @@
 import React from 'react'
-import Buttons from './Buttons'
-import LengthSetters from './LengthSetters'
+import Buttons from './buttons'
+import LengthSetters from './length-setters'
 
 class Controls extends React.Component {
   render() {

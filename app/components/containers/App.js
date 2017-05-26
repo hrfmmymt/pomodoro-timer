@@ -10,10 +10,10 @@ import {
   clearTimer,
   finishTimer
 } from '../../actions'
-import Controls from '../presentationals/Controls'
-import Clock from '../presentationals/Clock'
+import Controls from '../presentationals/controls'
+import Clock from '../presentationals/clock'
 
-import styles from '../../styles/app.css'
+import Styles from '../../styles/app.css'
 
 const mapStateToProps = state => ({
   pomodoroLength: state.pomodoroLength,

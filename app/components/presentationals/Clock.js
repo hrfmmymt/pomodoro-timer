@@ -17,7 +17,6 @@ class Clock extends React.Component {
     const fin = p.timer.is_finished
     let stateRelatedCallback = this.setActivityType
     let clockCSSClass = ''
-    // let indicators
     let time
     let status
 
@@ -32,7 +31,6 @@ class Clock extends React.Component {
     if (fin) {
       time = new Date(0)
     } else {
-      // time = (p.timer.time !== 0) ? new Date(p.timer.time) : new Date(p.children)
       time = (p.timer.time === 0) ? new Date(p.children) : new Date(p.timer.time)
     }
 
